@@ -1,0 +1,34 @@
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 10em;
+}
+
+label {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid;
+}
+
+
+form {
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-around;
+}
+
+
+form div {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  font-family: 'Bungee', sans-serif;
+  background-color: #4056A1;
+  color: #FFFFFF;
+
+}

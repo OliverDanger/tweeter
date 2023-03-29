@@ -1,23 +1,28 @@
-section {
+.new-tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   height: 10em;
-}
-
-label {
-  padding-bottom: 0.5em;
-  border-bottom: 1px solid;
+  width: 90%;
 }
 
 
 form {
-  height: 75%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: space-around;
+}
+
+textarea {
+  display: flex;
+  background-color: #f4f1ec;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid;
+  border-color: #545149;
 }
 
 
@@ -26,9 +31,12 @@ form div {
   justify-content: space-between;
 }
 
+output {
+  font-family: 'Bungee', sans-serif;
+}
+
 button {
   font-family: 'Bungee', sans-serif;
   background-color: #4056A1;
   color: #FFFFFF;
-
 }

@@ -1,4 +1,4 @@
-header {
+.page-header {
   height: 520px;
   display: flex;
   flex-direction: column;
@@ -6,7 +6,7 @@ header {
   justify-content: flex-end;
   
   color: #FFFFFF;
-  background-color: #864b1e;
+  background-color: rgb(180, 105, 65);
   background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 

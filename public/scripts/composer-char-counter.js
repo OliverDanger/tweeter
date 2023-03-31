@@ -1,10 +1,8 @@
-console.log('tomato');
-
 $(document).ready(function() {
-  console.log('The page is loaded!');
+  console.log('The page loads!');
 
   $("textarea").on('input', event => {
-    console.log(event.target.value);
+    $('#tweet-error').empty()
     let tweetLength = event.target.value.length;
     $(".counter").text(140 - tweetLength)
     if (tweetLength > 140) {

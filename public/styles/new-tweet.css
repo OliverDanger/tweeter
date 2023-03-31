@@ -5,11 +5,12 @@
   justify-content: space-around;
   height: 10em;
   width: 90%;
+  margin-top: 1em;
 }
 
 
 form {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -39,4 +40,15 @@ button {
   font-family: 'Bungee', sans-serif;
   background-color: #4056A1;
   color: #FFFFFF;
+}
+
+#tweet-error {
+  background-color: rgb(255, 86, 80);
+  opacity: 95%;
+  color: white;
+  margin: 1em;
+  padding: 0 0.75em 0 0.75em;
+  border-radius: 0.25em;
+  display: flex;
+  justify-content: center;
 }

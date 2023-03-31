@@ -16,3 +16,12 @@
 div h2 {
   margin: 0.5em;
 }
+
+@media (min-width: 1024px) {
+  .page-header {
+    height: calc(100vh - 120px);
+    position: fixed;
+    margin: 120px 0 0 0;
+    justify-content: center;
+  }
+}

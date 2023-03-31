@@ -19,6 +19,8 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -30,7 +32,12 @@ main {
 }
 
 @media (min-width: 1024px) {
-  main {
+  body {
     flex-direction: row;
+    justify-content: space-between;
+  }
+  main {
+    margin-top: 2em;
+    margin-left: 25vw;
   }
 }

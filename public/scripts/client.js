@@ -4,11 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
+//for sanitizing data
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
+
 
 const createTweetElement = (data) => {
   return (`
@@ -50,11 +53,9 @@ const createTweetElement = (data) => {
   `)
 };
 
+
 const loadTweets = () => {
-  $.ajax({
-    method: "GET",
-    url: "/tweets"
-  })
+$.get('/tweets')
   .then(function(data) {
     const tweetsChrono = data.reverse()
     for (const tweet of tweetsChrono) {
@@ -66,28 +67,16 @@ const loadTweets = () => {
 };
 
 
-
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-};
-
-
-
-// Test / driver code (temporary)
+//____________________________________________________________________
 
 $(document).ready( function() {
   $('form.composer').on('submit', function(event) {
     event.preventDefault()
-    const tweetLength = $('textarea').val().length;
+
+    let $input = $(this);
+    const $tweetText = $input.find('#tweet-text');
+    const tweetLength = $tweetText.val().length;
+
     if (tweetLength === 0) {
       $('#tweet-error').empty().append(
       `<p><b>Error:</b> Enter tweet prior to clicking submit.</p>`
@@ -101,12 +90,7 @@ $(document).ready( function() {
       return;
     }
 
-
-    $.ajax({
-      method: "POST",
-      url: `/tweets?${$( this ).serialize()}`,
-      data: $( this ).serialize()
-    })
+    $.post(`/tweets?${$( this ).serialize()}`, $( this ).serialize())
     .then(function(data) {
       $('.posted-tweet').remove();
       $('#tweet-text').val('')

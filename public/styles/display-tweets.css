@@ -29,6 +29,8 @@ p.tweet-body {
   padding: 1em;
   border-bottom: 2px solid;
   border-color: #545149;
+  word-wrap: break-word;
+  width: 100%;
 }
 
 .tweet-footer {
@@ -44,5 +46,11 @@ p.tweet-body {
 }
 
 .icon:hover {
-  color: yellowgreen;
+  color: deepskyblue;
+}
+
+@media (min-width: 1024px) {
+  article.posted-tweet {
+    width: 60vw;
+  }
 }
